@@ -1,0 +1,27 @@
+
+<div class="jumbotron">
+  <h1 class="display-4">
+    <%= @heir.first_name %>
+    <%= @heir.last_name %>
+  </h1>
+  <p class="lead">
+    <strong>Email:</strong>
+    <%= @heir.email %>
+    <br/>
+
+    <strong>Phone number:</strong>
+    <%= @heir.phone_number %>
+    <br/>
+
+    <strong>Facebook:</strong>
+    <%= @heir.facebook %>
+    <br/>
+  </p>
+  <hr class="my-4">  
+  <%= link_to 'Edit', edit_heir_path(@heir), class:"btn btn-secondary" %> 
+  <%= link_to 'Back', heirs_path, class:"btn btn-dark"%>
+</div>
+
+
+
+

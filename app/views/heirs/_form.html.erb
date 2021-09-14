@@ -1,0 +1,51 @@
+<%= form_with(model: heir) do |form| %>
+  <% if heir.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(heir.errors.count, "error") %> prohibited this heir from being saved:</h2>
+
+      <ul>
+        <% heir.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.text_field :first_name, class:"form-control", placeholder:"First Name" %>
+  </div>
+  <br/>
+  <div class="field form-group">
+    <%= form.text_field :last_name, class:"form-control", placeholder:"Last Name" %>
+  </div>
+  <br/>
+  <div class="field form-group">
+    <%= form.text_field :email, class:"form-control", placeholder:"example@gmail.com" %>
+  </div>
+  <br/>
+  <div class="field form-group">
+    <%= form.text_field :phone_number, class:"form-control", placeholder:"Number" %>
+  </div>
+  
+  <br/> 
+  <div class="field form-group">
+    <%= form.text_field :facebook, class:"form-control", placeholder:"Juan Dela Cruz" %>
+  </div>
+  
+  <br/> 
+  <div class="field form-group">
+    <%= 
+      form.number_field :user_id, 
+      id: :heir_user_id,
+      class:"form-control", 
+      value:current_user.id,
+      type: :hidden
+    %>
+  </div>
+
+  <br/>
+  <div class="actions">
+    <%= form.submit class: 'btn btn-secondary' %>
+  </div>
+  <br/>
+<% end %>

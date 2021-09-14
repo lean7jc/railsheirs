@@ -1,0 +1,44 @@
+<% if user_signed_in? %>
+
+  <h1>Heirs List</h1>
+    <table class="
+      table 
+      table-striped 
+      table-bordered 
+      table-hover
+    ">
+      <thead class="table-dark">
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone number</th>
+          <th>Facebook</th>
+          <th> </th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @heirs.each do |heir| %>
+            <tr>
+              <td>
+                <%= link_to heir.first_name  + " " +heir.last_name, heir, class:"btn btn-primary" %>
+              </td>
+
+              <td><%= heir.email %></td>
+              <td><%= heir.phone_number %></td>
+              <td><%= heir.facebook %></td>
+
+              <td><%= link_to 'Delete', heir, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger" %></td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+
+  <%= link_to 'New Heir', new_heir_path, class: "btn btn-secondary" %>
+<% else %>
+  <h1>Hello World!</h1>
+  This is my first Rails   Webpage...
+
+<% end %>

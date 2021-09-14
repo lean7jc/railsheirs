@@ -1,0 +1,7 @@
+<h1>Editing Heir</h1>
+
+<%= render 'form', heir: @heir %>
+
+<%= link_to 'Show', @heir, class: 'btn btn-dark' %> 
+<%= link_to 'Delete', @heir, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %>
+<%= link_to 'Back', heirs_path, class: 'btn btn-dark' %>
